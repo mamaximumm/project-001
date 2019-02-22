@@ -46,7 +46,7 @@ class ImageUpload extends Component {
         {image !== null && <img style={styleImage} src={URL.createObjectURL(image)} alt="no"/>}
         <input type="file" onChange={this.handleChange}/>
         <button onClick={this.handleUpload}>Upload</button>
-        {this.state.result !== null && <img src= { `data:image/png;base64, ${this.state.result}`}alt="no"/>}
+        {this.state.result !== null && <img style={styleImage} src= { `data:image/png;base64, ${this.state.result}`}alt="no"/>}
         <br/>
       </div>
     )
