@@ -21,7 +21,7 @@ class ImageUpload extends Component {
     }
   }
   handleUpload = async () => {
-    const url = 'http://eb280c2a.ngrok.io/test-a11e1/us-central1/project_001';
+    const url = 'https://us-central1-test-a11e1.cloudfunctions.net/project_001';
 
       const {image} = this.state;
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -46,7 +46,7 @@ class ImageUpload extends Component {
         {image !== null && <img style={styleImage} src={URL.createObjectURL(image)} alt="no"/>}
         <input type="file" onChange={this.handleChange}/>
         <button onClick={this.handleUpload}>Upload</button>
-        {this.state.result !== null && <img src= {this.state.result}/>}
+        {this.state.result !== null && <img src= {this.state.result}alt="no"/>}
         <br/>
       </div>
     )
